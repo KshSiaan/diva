@@ -6,25 +6,26 @@ import {
 } from "lucide-react";
 import React from "react";
 
+export const navs = [
+  {
+    icon: <MessageSquareDot />,
+    label: "Current Chat",
+  },
+  {
+    icon: <MessageSquareDiff />,
+    label: "New chat",
+  },
+  {
+    icon: <BotMessageSquare />,
+    label: "Configure",
+  },
+  {
+    icon: <Settings />,
+    label: "Settings",
+  },
+];
+
 export default function Sidebar() {
-  const navs = [
-    {
-      icon: <MessageSquareDot />,
-      label: "Current Chat",
-    },
-    {
-      icon: <MessageSquareDiff />,
-      label: "New chat",
-    },
-    {
-      icon: <BotMessageSquare />,
-      label: "Configure",
-    },
-    {
-      icon: <Settings />,
-      label: "Settings",
-    },
-  ];
   return (
     <div className="fixed left-0 top-[64px] w-[20dvw] h-[calc(100dvh-64px)] border-r font-bodoni hidden sm:block">
       <ul className="divide-y border-b">

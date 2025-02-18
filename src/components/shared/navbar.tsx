@@ -10,6 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Menu from "./menu";
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [logo, setLogo] = useState<string>("logo");
@@ -23,8 +24,8 @@ export default function Navbar() {
   }, [theme]);
 
   return (
-    <nav className="h-[64px] w-full border-b px-3 md:px-12 flex flex-row justify-between">
-      <div className="h-[64px] w-[200px] flex flex-row justify-start items-center">
+    <nav className="h-[64px] w-full border-b px-3 md:px-12 flex flex-row justify-between items-center">
+      <div className="h-[64px] w-[300px] flex flex-row justify-start items-center">
         <div
           className="w-[28px] h-[28px] bg-cover"
           style={{
@@ -34,8 +35,7 @@ export default function Navbar() {
         ></div>
         <h1 className="text-2xl font-megrim font-bold m-0">Diva</h1>
       </div>
-      <div className=""></div>
-      <div className="h-[64px] w-[200px] flex flex-row justify-start items-center space-x-2">
+      <div className="h-[64px] w-[300px] flex flex-row justify-start items-center space-x-2">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="icon">
@@ -65,6 +65,7 @@ export default function Navbar() {
         >
           <UserCircle2 /> Authenticate
         </Button>
+        <Menu />
       </div>
     </nav>
   );

@@ -14,10 +14,10 @@ export default function Home() {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  }, [messages]); // This will now trigger when messages update
+  }, [messages]);
 
   return (
-    <ScrollArea className="flex-grow w-full p-6" ref={scrollRef}>
+    <ScrollArea className="flex-grow w-full p-6 text-sm" ref={scrollRef}>
       {messages.map(
         (item: { sender: number; text: string }, i: Key | null | undefined) =>
           item.sender === 0 ? (
