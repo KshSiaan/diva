@@ -10,10 +10,11 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <Navbar />
-      <Sidebar />
       <MessageProvider>
-        <div className="sm:pl-[20dvw] h-[calc(100vh-64px)] flex flex-col justify-start items-start">
+        <Navbar />
+        <Sidebar />
+
+        <div className="sm:pl-[20dvw] h-[calc(100dvh-64px)] flex flex-col justify-start items-start">
           {children}
           <ChatInput />
         </div>
