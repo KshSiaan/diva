@@ -10,6 +10,7 @@ interface MessageContextType {
   messages: messageType[];
   updateMessage: (sentBy: number, x: string) => void;
   removeLastMessage: () => void;
+  resetMessages: () => void;
 }
 
 const MessageContext = createContext<MessageContextType | undefined>(undefined);
@@ -25,9 +26,13 @@ export function MessageProvider({ children }: { children: ReactNode }) {
     setMessages((prev) => prev.slice(0, -1));
   };
 
+  const resetMessages = () => {
+    setMessages([]);
+  };
+
   return (
     <MessageContext.Provider
-      value={{ messages, updateMessage, removeLastMessage }}
+      value={{ messages, updateMessage, removeLastMessage, resetMessages }}
     >
       {children}
     </MessageContext.Provider>
